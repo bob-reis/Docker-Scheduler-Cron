@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+
+  scheduler:
+    container_name: scheduler
+    image: robertsonreis/scheduler:1.0
+    volumes:
+      - ./cron.job:/etc/cron.d/cron.job:ro
+      - ./supervisor-api.conf:/etc/supervisor/conf.d/supervisor-api.conf:ro
+      - ./scripts:/opt/scripts
+      - ./Logs:/var/log/scheduler
