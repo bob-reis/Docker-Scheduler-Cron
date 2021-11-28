@@ -20,18 +20,6 @@ Lembre de por garantia, antes de chamar o script colocar sempre a permissão de 
 Caso você queira persistir algum log dos seus agendamentos, você pode direciona-los para `/var/log/schedule/`, ele salvará no disco do host no caminho `./Logs`
 
 #### Executando o Docker
-Para executar o container mapeando externamente os arquivos:
-
-`docker run robertsonreis/scheduler:1.0 \
-
-      -v "./cron.job::/etc/cron.d/cron.job:ro" \
-      
-      -v "./supervisor-api.conf:/etc/supervisor/conf.d/supervisor-api.conf:ro" \
-      
-      -v "./scripts:/opt/scripts" \ 
-      
-      -v "./Logs:/var/log/scheduler"`
-      
- Ou você pode utilizar o docker compose:
+Para executar o container mapeando externamente os arquivoscom o docker compose:
  
  `docker compose up -d`
