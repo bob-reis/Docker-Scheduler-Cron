@@ -23,9 +23,13 @@ Caso você queira persistir algum log dos seus agendamentos, você pode direcion
 Para executar o container mapeando externamente os arquivos:
 
 `docker run robertsonreis/scheduler:1.0 \
+
       -v "./cron.job::/etc/cron.d/cron.job:ro" \
+      
       -v "./supervisor-api.conf:/etc/supervisor/conf.d/supervisor-api.conf:ro" \
+      
       -v "./scripts:/opt/scripts" \ 
+      
       -v "./Logs:/var/log/scheduler"`
       
  Ou você pode utilizar o docker compose:
